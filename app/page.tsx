@@ -24,7 +24,6 @@ export default function Home() {
 
     const pdfViewer = new PDFViewer({
       container: viewerRef.current,
-      eventBus:
     });
 
     pdfViewerRef.current = pdfViewer;
