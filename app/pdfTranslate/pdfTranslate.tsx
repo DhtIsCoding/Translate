@@ -5,6 +5,13 @@ import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { pdfjs, Document, Page } from "react-pdf";
 
+// annotations (e.g. links)  注释链接
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+// 文本链接
+import 'react-pdf/dist/Page/TextLayer.css';
+
+
+
 // 设置pdfjs worker路径
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.mjs',
