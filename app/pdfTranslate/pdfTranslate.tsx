@@ -1,16 +1,10 @@
-"use client";
+'use client';
 // import Image from "next/image";
 // import { getDocument, GlobalWorkerOptions } from "pdfjs-dist/legacy/build/pdf.mjs";
-import { Input } from "@/components/ui/input";
-import { useState } from "react";
-import { pdfjs, Document, Page } from "react-pdf";
-
-// annotations (e.g. links)  注释链接
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-// 文本链接
-import 'react-pdf/dist/Page/TextLayer.css';
-
-
+import { Input } from '@/components/ui/input';
+import type { PDFDocumentProxy } from 'pdfjs-dist';
+import { useState } from 'react';
+import { Document, Page, pdfjs } from 'react-pdf';
 
 // 设置pdfjs worker路径
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -33,26 +27,28 @@ export default function Home() {
     setPdfFile(pdfFile);
   }
 
-  function handleDocumentLoadSuccess(pdfDocument: any) {
-    console.log("pdfDocument", pdfDocument);
+  function handleDocumentLoadSuccess(pdfDocument: PDFDocumentProxy) {
+    console.log('pdfDocument', pdfDocument);
+    setNumPages(pdfDocument.numPages);
   }
 
   return (
-    <div>
-      <div className="grid w-full max-w-sm items-center gap-1.5">
-        <Input id="pdf" type="file" accept=".pdf" onChange={handleFileChange} />
+    <div className="flex h-full flex-col items-center py-8">
+      <Input
+        id="pdf"
+        type="file"
+        accept=".pdf"
+        className="w-min"
+        onChange={handleFileChange}
+      />
 
-        <Document file={pefFile} onLoadSuccess={handleDocumentLoadSuccess}>
-          <Page pageNumber={pageNumber} />
-        </Document>
-        <p>
-          Page {pageNumber} of {numPages}
-        </p>
+      <Document file={pefFile} onLoadSuccess={handleDocumentLoadSuccess}>
+        <Page pageNumber={pageNumber} />
+      </Document>
 
-        {/* <div ref={viewerRef} className="overflow-auto absolute w-full h-full">
-          <div id="viewer" className="pdfViewer"></div>
-        </div> */}
-      </div>
+      <p>
+        Page {pageNumber} of {numPages}
+      </p>
     </div>
   );
 }
