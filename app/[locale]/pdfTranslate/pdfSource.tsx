@@ -10,10 +10,11 @@ import {
   PaginationPrevious,
 } from '@/components/ui/pagination';
 import { cMapOptions } from '@/lib/pdfDisplay';
-import type { PDFDocumentProxy } from 'pdfjs-dist';
 import { useEffect, useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { OnLoadProgressArgs } from 'react-pdf/src/shared/types.js';
+
+import type { PDFDocumentProxy } from 'pdfjs-dist';
 
 // 设置pdfjs worker路径
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
@@ -22,14 +23,18 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 ).toString();
 
 function CustomRenderer(prop: { key?: string }) {
-  if (!prop.key) {
-    return null;
-  }
+
 
   console.log('CustomRenderer', prop);
-  debugger;
   return <div></div>;
 }
+
+
+  function customTextRenderer(...rest: any[]) {
+    console.log('customTextRenderer', rest);
+
+    return "123"
+  }
 
 export default function Home() {
   const [pefFile, setPdfFile] = useState<File>();
@@ -72,9 +77,7 @@ export default function Home() {
     console.log(process.loaded / process.total);
   }
 
-  function customRenderer(...rest: any[]) {
-    console.log('customRenderer', rest);
-  }
+
 
   return (
     <div className="flex h-full">
@@ -87,16 +90,15 @@ export default function Home() {
           onChange={handleFileChange}
         />
 
-        <div className="my-4 flex flex-1 flex-col">
+        <div className="flex flex-1 flex-col">
           <Document
             className="flex-1"
-            renderMode="custom"
             file={pefFile}
             options={cMapOptions}
             onLoadProgress={handleLoadProgress}
             onLoadSuccess={handleDocumentLoadSuccess}
           >
-            <Page pageNumber={pageNumber} customRenderer={CustomRenderer} />
+            <Page pageNumber={pageNumber}  />
           </Document>
           {numPages && (
             <p className="text-center">
