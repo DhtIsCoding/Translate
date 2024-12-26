@@ -1,4 +1,8 @@
 {
+    "header": {
+        "title": "翻译大师",
+        "about": "关于"
+    },
     "HomePage": {
         "title": "Hello world!",
         "about": "Go to the about page"

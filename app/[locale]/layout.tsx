@@ -3,16 +3,16 @@ import localFont from 'next/font/local';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import {getMessages} from 'next-intl/server';
-import './globals.css';
+import '../globals.css';
 import { NextIntlClientProvider } from 'next-intl';
 
 const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
+  src: '../fonts/GeistVF.woff',
   variable: '--font-geist-sans',
   weight: '100 900',
 });
 const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
+  src: '../fonts/GeistMonoVF.woff',
   variable: '--font-geist-mono',
   weight: '100 900',
 });
@@ -24,11 +24,14 @@ export  const metadata: Metadata = {
 
 export  default async function RootLayout({
   children,
-  params: {locale}
+  params
 }: Readonly<{
   children: React.ReactNode;
-  params: {locale: string};
+  params: Promise<{locale: string}>;
 }>) {
+
+  const {locale} = await params;
+
   // Ensure that the incoming `locale` is valid
   if (!routing.locales.includes(locale as any)) {
     notFound();
