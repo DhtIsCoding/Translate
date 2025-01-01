@@ -1,7 +1,9 @@
 {
     "header": {
         "title": "翻译大师",
-        "about": "关于"
+        "home": "首页",
+        "introduction": "介绍",
+        "begin": "开始使用"
     },
     "HomePage": {
         "title": "Hello world!",
