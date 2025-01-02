@@ -5,5 +5,11 @@
     "next/typescript",
     "prettier",
     "plugin:prettier/recommended"
-  ]
+  ],
+  "plugins": {
+    "react-compiler": {}
+  },
+  "rules": {
+    "react-compiler/react-compiler": "error"
+  }
 }

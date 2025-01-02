@@ -47,10 +47,10 @@ export default function HeaderMenuBtn() {
 
   return (
     <>
-      <Button onClick={changeOpen} variant="ghost">
+      <Button onClick={changeOpen} id="menu-button" variant="ghost">
         {open ? <X /> : <Menu />}
       </Button>
-      {createPortal(
+      {document && createPortal(
         <>
           <div
             className={`transform absolute top-0 w-full transition-all h-screen bg-black/30 ${open ? "visible" : "hidden"}`}

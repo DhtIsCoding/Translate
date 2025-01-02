@@ -11,21 +11,21 @@ export default function Home() {
   return (
     <>
       <HeaderContainer>
-        <Image src={Logo} alt="logo" className="size-11" />
+        <Image src={Logo} id="logo" alt="logo" className="size-11" />
 
-        <h1>{t("title")}</h1>
+        <h1 id="title" className="text-xl">{t("title")}</h1>
 
         <span className="flex-1"></span>
 
+        {/* 菜单按钮 */}
         <HeaderMenuBtn />
 
-        <Link href="/login" className={buttonVariants({ variant: "default" })}>
+        <Link id="login" href="/login" className={buttonVariants({ variant: "default" })}>
           {t("begin")}
         </Link>
       </HeaderContainer>
 
-      <div className=" h-screen"></div>
-      <div className=" h-screen"></div>
+      <div className="pt-28 flex flex-col"></div>
     </>
   );
 }

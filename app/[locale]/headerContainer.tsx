@@ -28,9 +28,11 @@ export default function HeaderContainer({
     };
   });
 
+  const headerClass = `flex items-center px-4 gap-x-2 w-full fixed transition-all ${small ? "h-14 [&_#logo]:size-10 [&_#title]:text-lg [&_#login]:w-20 [&_#login]:h-8" : "h-20"}`
+
   return (
     <header
-      className={`flex items-center px-4 gap-x-2 w-full fixed transition-all ${small ? "h-14 scale-90" : "h-20 scale-100"}`}
+      className={headerClass}
     >
       {children}
     </header>
