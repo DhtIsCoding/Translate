@@ -1160,12 +1160,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.10.3":
-  version: 22.10.3
-  resolution: "@types/node@npm:22.10.3"
+"@types/node@npm:^22.10.5":
+  version: 22.10.5
+  resolution: "@types/node@npm:22.10.5"
   dependencies:
     undici-types: "npm:~6.20.0"
-  checksum: 10c0/0471a73c8672c803b1f2b912c2c466d00a217186933e8ff38ec7779b4a3f88a0eea3b513a59f2abf9de17cc8bbca688a3c6643c6513ac8dd1c3e45d25fab93b1
+  checksum: 10c0/6a0e7d1fe6a86ef6ee19c3c6af4c15542e61aea2f4cee655b6252efb356795f1f228bc8299921e82924e80ff8eca29b74d9dd0dd5cc1a90983f892f740b480df
   languageName: node
   linkType: hard
 
@@ -1178,12 +1178,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^19.0.2":
-  version: 19.0.2
-  resolution: "@types/react@npm:19.0.2"
+"@types/react@npm:^19.0.3":
+  version: 19.0.3
+  resolution: "@types/react@npm:19.0.3"
   dependencies:
     csstype: "npm:^3.0.2"
-  checksum: 10c0/8992f39701fcf1bf893ef8f94a56196445667baf08fe4f6050a14e229a17aad3265ad3efc01595ff3b4d5d5c69da885f9aa4ff80f164a613018734efcff1eb8f
+  checksum: 10c0/90129c45f2f09154d9409964964d0ccbac7f04d5f7fcf73fc146d33887931fbfdfd1e2947514298f94f986cc264aff8ba3201e9a4ea207d3308f20a06d47c805
   languageName: node
   linkType: hard
 
@@ -1591,12 +1591,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-react-compiler@npm:19.0.0-beta-55955c9-20241229":
-  version: 19.0.0-beta-55955c9-20241229
-  resolution: "babel-plugin-react-compiler@npm:19.0.0-beta-55955c9-20241229"
+"babel-plugin-react-compiler@npm:19.0.0-beta-63e3235-20250105":
+  version: 19.0.0-beta-63e3235-20250105
+  resolution: "babel-plugin-react-compiler@npm:19.0.0-beta-63e3235-20250105"
   dependencies:
     "@babel/types": "npm:^7.19.0"
-  checksum: 10c0/f0b20b45d514c727c4171fc158eb2693b848c7713db59c79bd54a43f427a7cd1193942df90de2e16ff027266454a6f53f519a792f066d237e9367593d9fdbc34
+  checksum: 10c0/83a32adc51488b3ed8d5c0ff94ed00b4f3f0058ef8a1ab9008fb2ba80da9cbeb357ee2c05a3d42f6582de7f92d75319f1d9ef66791b4e02ba7ce969ffc668693
   languageName: node
   linkType: hard
 
@@ -2523,9 +2523,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-compiler@npm:19.0.0-beta-55955c9-20241229":
-  version: 19.0.0-beta-55955c9-20241229
-  resolution: "eslint-plugin-react-compiler@npm:19.0.0-beta-55955c9-20241229"
+"eslint-plugin-react-compiler@npm:19.0.0-beta-63e3235-20250105":
+  version: 19.0.0-beta-63e3235-20250105
+  resolution: "eslint-plugin-react-compiler@npm:19.0.0-beta-63e3235-20250105"
   dependencies:
     "@babel/core": "npm:^7.24.4"
     "@babel/parser": "npm:^7.24.4"
@@ -2535,7 +2535,7 @@ __metadata:
     zod-validation-error: "npm:^3.0.3"
   peerDependencies:
     eslint: ">=7"
-  checksum: 10c0/59183b041ee82a56c7b9ecf4d813ed9d261f318c7f7a295fb734a404f107a3f416cb4252f856c7af3aa0601d369f0ba7e7e25fe3a4a506e4aec1b9e4e816be5c
+  checksum: 10c0/0a623a9771a2dcb8087063f3b094c037030b504f41d44be63ac6120bb7205145463f6dcad6ff1cde36ab762e89c8db8bd5bb2a2b30fa554ae280daf310974635
   languageName: node
   linkType: hard
 
@@ -5641,10 +5641,10 @@ __metadata:
     "@next/eslint-plugin-next": "npm:^15.1.3"
     "@radix-ui/react-dialog": "npm:^1.1.4"
     "@radix-ui/react-slot": "npm:^1.1.1"
-    "@types/node": "npm:^22.10.3"
-    "@types/react": "npm:^19.0.2"
+    "@types/node": "npm:^22.10.5"
+    "@types/react": "npm:^19.0.3"
     "@types/react-dom": "npm:^19.0.2"
-    babel-plugin-react-compiler: "npm:19.0.0-beta-55955c9-20241229"
+    babel-plugin-react-compiler: "npm:19.0.0-beta-63e3235-20250105"
     class-variance-authority: "npm:^0.7.1"
     clsx: "npm:^2.1.1"
     copy-webpack-plugin: "npm:^12.0.2"
@@ -5653,7 +5653,7 @@ __metadata:
     eslint-config-next: "npm:^15.1.3"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-prettier: "npm:^5.2.1"
-    eslint-plugin-react-compiler: "npm:19.0.0-beta-55955c9-20241229"
+    eslint-plugin-react-compiler: "npm:19.0.0-beta-63e3235-20250105"
     eslint-plugin-react-hooks: "npm:^5.1.0"
     globals: "npm:^15.14.0"
     lucide-react: "npm:^0.469.0"
