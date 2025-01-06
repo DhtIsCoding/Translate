@@ -9,6 +9,11 @@
         "title": "基于<model>大语言模型</model>的文档翻译",
         "layout": "完美保留原文的排版",
         "translated": "已翻译521，395份文档",
-        "upload": "上传文档"
+        "upload": "上传文档",
+        "example": "查看示例"
+    },
+    "pdfCarousel": {
+        "original": "查看原文",
+        "translated": "查看译文"
     }
 }

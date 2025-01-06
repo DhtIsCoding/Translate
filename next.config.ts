@@ -1,17 +1,17 @@
-import CopyWebpackPlugin from 'copy-webpack-plugin';
-import type { NextConfig } from 'next';
-import path from 'node:path';
-import createNextIntlPlugin from 'next-intl/plugin';
- 
-const withNextIntl = createNextIntlPlugin();
+import CopyWebpackPlugin from 'copy-webpack-plugin'
+import type { NextConfig } from 'next'
+import path from 'node:path'
+import createNextIntlPlugin from 'next-intl/plugin'
 
-const pdfjsDistPath = path.dirname(require.resolve('pdfjs-dist/package.json'));
-const cMapsDir = path.join(pdfjsDistPath, 'cmaps');
+const withNextIntl = createNextIntlPlugin()
+
+const pdfjsDistPath = path.dirname(require.resolve('pdfjs-dist/package.json'))
+const cMapsDir = path.join(pdfjsDistPath, 'cmaps')
 
 const nextConfig: NextConfig = {
   /* config options here */
   webpack: (config) => {
-    config.resolve.alias.canvas = false;
+    config.resolve.alias.canvas = false
 
     config.plugins.push(
       new CopyWebpackPlugin({
@@ -22,10 +22,10 @@ const nextConfig: NextConfig = {
           },
         ],
       }),
-    );
+    )
 
-    return config;
+    return config
   },
-};
+}
 
-export default withNextIntl(nextConfig);
+export default withNextIntl(nextConfig)
