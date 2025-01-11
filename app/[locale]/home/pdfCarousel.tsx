@@ -1,46 +1,39 @@
-'use client'
-
-import { Button } from '@/components/ui/button'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  type CarouselApi,
+  CarouselNext,
+  CarouselPrevious,
 } from '@/components/ui/carousel'
 import { useTranslations } from 'next-intl'
-import { useState } from 'react'
-import bitcoinPdf from "@/assest/pdfs/bitcoin.pdf"
-
-
-console.log("bitcoinPdf",bitcoinPdf);
-
+import PdfDisplayer from './pdfDisplayer'
 
 function Original() {
-  return <div>Original</div>
+  return <PdfDisplayer file="/pdfs/bitcoin.pdf" />
 }
 
 function Translated() {
-  return <div>translated</div>
+  return <PdfDisplayer file="/pdfs/bitcoin.zh-CN.pdf" />
 }
 
 export default function PdfCarousel() {
-  const [api, setApi] = useState<CarouselApi>()
+  // const [api, setApi] = useState<CarouselApi>()
   const t = useTranslations('pdfCarousel')
 
-  function changePage() {
-    if (api?.canScrollNext) {
-      api.scrollNext()
-      return
-    }
+  // function changePage() {
+  //   if (api?.canScrollNext) {
+  //     api.scrollNext()
+  //     return
+  //   }
 
-    if (api?.canScrollPrev) {
-      api.scrollPrev()
-      return
-    }
-  }
+  //   if (api?.canScrollPrev) {
+  //     api.scrollPrev()
+  //     return
+  //   }
+  // }
 
   return (
-    <Carousel setApi={setApi}>
+    <Carousel>
       <CarouselContent>
         <CarouselItem>
           <Original />
@@ -50,9 +43,11 @@ export default function PdfCarousel() {
         </CarouselItem>
       </CarouselContent>
 
-      <Button onClick={changePage}>
+      {/* <Button onClick={changePage}>
         {api?.canScrollNext ? t('original') : t('translated')}
-      </Button>
+      </Button> */}
+      <CarouselPrevious className="left-2" />
+      <CarouselNext className="right-2" />
     </Carousel>
   )
 }

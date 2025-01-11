@@ -1,7 +1,7 @@
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import type { NextConfig } from 'next'
-import path from 'node:path'
 import createNextIntlPlugin from 'next-intl/plugin'
+import path from 'node:path'
 
 const withNextIntl = createNextIntlPlugin()
 

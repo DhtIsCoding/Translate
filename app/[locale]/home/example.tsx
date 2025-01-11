@@ -1,11 +1,17 @@
+import ExampleBg from '@/assest/images/exampleBg.webp'
 import { buttonVariants } from '@/components/ui/button'
-import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer'
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from '@/components/ui/drawer'
+import { Root as VisuallyHiddenRoot } from '@radix-ui/react-visually-hidden'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import ExampleBg from '@/assest/images/exampleBg.webp'
 import PdfCarousel from './pdfCarousel'
-
-
 
 export default function Example() {
   const t = useTranslations('homePage')
@@ -13,7 +19,12 @@ export default function Example() {
   return (
     <Drawer>
       <DrawerTrigger className="text-center relative">
-        <Image src={ExampleBg} alt="example" className="w-11/12 m-auto" />
+        <Image
+          src={ExampleBg}
+          priority
+          alt="example"
+          className="w-11/12 m-auto"
+        />
         <span
           className={buttonVariants({
             variant: 'default',
@@ -24,7 +35,14 @@ export default function Example() {
         </span>
       </DrawerTrigger>
       <DrawerContent>
-        <PdfCarousel/>
+        <VisuallyHiddenRoot>
+          <DrawerHeader>
+            <DrawerTitle></DrawerTitle>
+            <DrawerDescription></DrawerDescription>
+          </DrawerHeader>
+        </VisuallyHiddenRoot>
+
+        <PdfCarousel />
       </DrawerContent>
     </Drawer>
   )
