@@ -9,7 +9,11 @@ import {
 } from '@/components/ui/carousel'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
-import bitcoin from "@/assest/pdfs/bitcoin.pdf?url"
+import bitcoinPdf from "@/assest/pdfs/bitcoin.pdf"
+
+
+console.log("bitcoinPdf",bitcoinPdf);
+
 
 function Original() {
   return <div>Original</div>
