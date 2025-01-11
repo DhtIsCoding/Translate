@@ -1,6 +1,6 @@
-import globals from 'globals'
 import { FlatCompat } from '@eslint/eslintrc'
-import eslintConfigPrettier from "eslint-config-prettier";
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+import globals from 'globals'
 
 const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
@@ -12,9 +12,7 @@ const eslintConfig = [
   { languageOptions: { globals: globals.browser } },
   ...compat.extends('next/core-web-vitals'),
   ...compat.extends('next/typescript'),
-  ...compat.extends('prettier'),
-  ...compat.extends('plugin:prettier/recommended'),
-  ...eslintConfigPrettier
+  eslintPluginPrettierRecommended,
 ]
 
 export default eslintConfig

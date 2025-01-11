@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/carousel'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
+import bitcoin from "@/assest/pdfs/bitcoin.pdf?url"
 
 function Original() {
   return <div>Original</div>
@@ -41,7 +42,7 @@ export default function PdfCarousel() {
           <Original />
         </CarouselItem>
         <CarouselItem>
-          <Translated/>
+          <Translated />
         </CarouselItem>
       </CarouselContent>
 
