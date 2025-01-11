@@ -1,10 +1,11 @@
-import type { Metadata } from 'next'
-import localFont from 'next/font/local'
 import { routing } from '@/i18n/routing'
-import { notFound } from 'next/navigation'
-import { getMessages } from 'next-intl/server'
-import '../globals.css'
+import { UserProvider } from '@auth0/nextjs-auth0/client'
+import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
+import { getMessages } from 'next-intl/server'
+import localFont from 'next/font/local'
+import { notFound } from 'next/navigation'
+import '../globals.css'
 
 const geistSans = localFont({
   src: '../fonts/GeistVF.woff',
@@ -42,13 +43,15 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className="h-full">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} h-full flex flex-col antialiased`}
-      >
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-      </body>
+      <UserProvider>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} h-full flex flex-col antialiased`}
+        >
+          <NextIntlClientProvider messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </body>
+      </UserProvider>
     </html>
   )
 }

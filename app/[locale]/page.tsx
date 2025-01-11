@@ -1,11 +1,11 @@
-import Image from 'next/image'
 import Logo from '@/assest/images/logo.png'
-import { useTranslations } from 'next-intl'
-import HeaderMenuBtn from './home/menuBtn'
+import { buttonVariants } from '@/components/ui/button'
 import { Link } from '@/i18n/routing'
-import { Button, buttonVariants } from '@/components/ui/button'
-import HeaderContainer from './home/headerContainer'
+import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 import Example from './home/example'
+import HeaderContainer from './home/headerContainer'
+import HeaderMenuBtn from './home/menuBtn'
 
 function HomePage() {
   const t = useTranslations('homePage')
@@ -25,7 +25,9 @@ function HomePage() {
         <p className="my-1">{t('layout')}</p>
         <p className="mb-8">{t('translated')}</p>
 
-        <Button className="w-7/12">{t('upload')}</Button>
+        <Link href="/login" className={buttonVariants({ variant: 'default' })}>
+          {t('upload')}
+        </Link>
       </div>
 
       <Example />
