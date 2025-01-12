@@ -1,8 +1,7 @@
-import Logo from '@/assest/images/logo.png'
 import { buttonVariants } from '@/components/ui/button'
+import Logo from '@/components/ui/logo'
 import { Link } from '@/i18n/routing'
 import { useTranslations } from 'next-intl'
-import Image from 'next/image'
 import Example from './home/example'
 import HeaderContainer from './home/headerContainer'
 import HeaderMenuBtn from './home/menuBtn'
@@ -43,7 +42,7 @@ export default function Home() {
   return (
     <>
       <HeaderContainer>
-        <Image src={Logo} id="logo" alt="logo" className="size-11" />
+        <Logo />
 
         <h1 id="title" className="text-xl">
           {t('title')}
