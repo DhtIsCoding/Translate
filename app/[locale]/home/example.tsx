@@ -18,7 +18,7 @@ export default function Example() {
 
   return (
     <Drawer>
-      <DrawerTrigger className="text-center relative">
+      <DrawerTrigger className="text-center relative ">
         <Image
           src={ExampleBg}
           priority

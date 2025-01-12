@@ -1,9 +1,9 @@
 'use client'
 import { Button, buttonVariants } from '@/components/ui/button'
-import { useState } from 'react'
+import { Link } from '@/i18n/routing'
 import { Menu, X } from 'lucide-react'
 import { useTranslations } from 'next-intl'
-import { Link } from '@/i18n/routing'
+import { useState } from 'react'
 import { createPortal } from 'react-dom'
 
 /**
@@ -54,10 +54,11 @@ export default function HeaderMenuBtn() {
         createPortal(
           <>
             <div
-              className={`transform absolute top-0 w-full transition-all h-screen bg-black/30 ${open ? 'visible' : 'hidden'}`}
+              className={`transform absolute top-0 z-10 w-full transition-all h-screen bg-black/30 ${open ? 'visible' : 'hidden'}`}
+              onClick={changeOpen}
             ></div>
             <nav
-              className={`transform absolute bg-white top-16 w-full transition-all origin-top-left px-4 py-6 flex flex-col shadow-md gap-y-6 ${open ? 'scale-y-100' : ' scale-y-0'}`}
+              className={`transform absolute z-10 bg-white top-16 w-full transition-all origin-top-left px-4 py-6 flex flex-col shadow-md gap-y-6 ${open ? 'scale-y-100' : ' scale-y-0'}`}
             >
               <ul>
                 {menus.map((menu, index) => (

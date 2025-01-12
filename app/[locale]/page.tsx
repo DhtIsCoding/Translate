@@ -25,9 +25,12 @@ function HomePage() {
         <p className="my-1">{t('layout')}</p>
         <p className="mb-8">{t('translated')}</p>
 
-        <Link href="/login" className={buttonVariants({ variant: 'default' })}>
+        <a
+          href="/auth/login"
+          className={buttonVariants({ variant: 'default' })}
+        >
           {t('upload')}
-        </Link>
+        </a>
       </div>
 
       <Example />
@@ -53,7 +56,7 @@ export default function Home() {
 
         <Link
           id="login"
-          href="/login"
+          href="/api/auth/login"
           className={buttonVariants({ variant: 'default' })}
         >
           {t('begin')}
