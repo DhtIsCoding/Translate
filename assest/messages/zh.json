@@ -15,5 +15,10 @@
     "pdfCarousel": {
         "original": "查看原文",
         "translated": "查看译文"
+    },
+    "userMenu": {
+        "transtion": "翻译",
+        "history": "历史记录",
+        "terms": "术语表"
     }
 }

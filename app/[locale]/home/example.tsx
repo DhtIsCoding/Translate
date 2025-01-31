@@ -18,17 +18,17 @@ export default function Example() {
 
   return (
     <Drawer>
-      <DrawerTrigger className="text-center relative ">
+      <DrawerTrigger className="relative text-center">
         <Image
           src={ExampleBg}
           priority
           alt="example"
-          className="w-11/12 m-auto"
+          className="m-auto w-11/12"
         />
         <span
           className={buttonVariants({
             variant: 'default',
-            className: 'absolute w-fit top-0 bottom-0 left-0 right-0 m-auto ',
+            className: 'absolute bottom-0 left-0 right-0 top-0 m-auto w-fit',
           })}
         >
           {t('example')}
